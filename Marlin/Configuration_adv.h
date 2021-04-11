@@ -686,7 +686,6 @@
     #define Z_STEPPER_ALIGN_AMP 1.0
   #endif
 
-  // On a 300mm bed a 5% grade would give a misalignment of ~1.5cm
   // Set number of iterations to align
   #define Z_STEPPER_ALIGN_ITERATIONS 3
 
