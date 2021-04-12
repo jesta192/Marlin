@@ -501,8 +501,8 @@
   #else
     // default XeeD
     #define DEFAULT_Kp  12.00
-    #define DEFAULT_Ki   0.20
-    #define DEFAULT_Kd 110.00
+    #define DEFAULT_Ki   0.40
+    #define DEFAULT_Kd  66.00
     // e3D 40W hotend with plated copper heater block
     //#define  DEFAULT_Kp 18.00
     //#define  DEFAULT_Ki 1.5
