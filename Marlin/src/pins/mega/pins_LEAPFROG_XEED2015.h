@@ -29,7 +29,9 @@
  * printer models. As such this file is currently specific to the Xeed.
  */
 
-#include "env_validate.h"
+#if NOT_TARGET(__AVR_ATmega2560__)
+  #error "Oops! Select 'Mega 2560' in 'Tools > Board.'"
+#endif
 
 #define BOARD_INFO_NAME "Leapfrog Xeed 2015"
 
@@ -74,33 +76,33 @@
 #define Z3_ENABLE_PIN                         39
 
 // EMOT2 connector
-#define E0_STEP_PIN                           37
-#define E0_DIR_PIN                            40
-#define E0_ENABLE_PIN                         36
+#define E0_STEP_PIN                           34 //37 for E0:Left
+#define E0_DIR_PIN                            35 //40 for E0:Left
+#define E0_ENABLE_PIN                         33 //36 for E0:Left
 
 // EMOT connector
-#define E1_STEP_PIN                           34
-#define E1_DIR_PIN                            35
-#define E1_ENABLE_PIN                         33
+#define E1_STEP_PIN                           37 //34 for E0:Left
+#define E1_DIR_PIN                            40 //35 for E0:Left
+#define E1_ENABLE_PIN                         36 //33 for E0:Left
 
 //
 // Filament runout
 //
-#define FIL_RUNOUT_PIN                        42  // ROT2 Connector
-#define FIL_RUNOUT2_PIN                       44  // ROT1 Connector
+#define FIL_RUNOUT_PIN                        44  // ROT2 Connector
+#define FIL_RUNOUT2_PIN                       42  // ROT1 Connector
 
 //
 // Temperature Sensors
 //
-#define TEMP_0_PIN                            15  // T3 Connector
-#define TEMP_1_PIN                            13  // T1 Connector
+#define TEMP_0_PIN                            13 //15 for E0:Left  // T3 Connector
+#define TEMP_1_PIN                            15 //13 for E0:Left  // T1 Connector
 #define TEMP_BED_PIN                          14  // BED Connector (Between T1 and T3)
 
 //
 // Heaters / Fans
 //
-#define HEATER_0_PIN                           8  // Misc Connector, pins 3 and 4 (Out2)
-#define HEATER_1_PIN                           9  // Misc Connector, pins 5 and 6 (Out3)
+#define HEATER_0_PIN                           9 //8 for E0:Left  // Misc Connector, pins 3 and 4 (Out2)
+#define HEATER_1_PIN                           8 //9 for E0:Left  // Misc Connector, pins 5 and 6 (Out3)
 #define HEATER_BED_PIN                         6  // Misc Connector, pins 9(-) and 10(+) (OutA)
 
 #define FAN_PIN                               10  // Misc Connector, pins 7(-) and 8 (+) (Out4)
@@ -110,4 +112,4 @@
 #define SOL1_PIN                               7  // Misc Connector, pins 1(-) and 2(+) (Out1)
 
 // Door Closed Sensor
-//#define DOOR_PIN                            45  // HM1 Connector
+#define DOOR_PIN                              45  // HM1 Connector
